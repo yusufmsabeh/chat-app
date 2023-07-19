@@ -34,7 +34,7 @@
     socket.on('send message', (data) => {
         const messageList = document.getElementById('message_list');
         const chatItem = document.createElement('li');
-        chatItem.textContent = data.user + ': ' + data.message;
+        chatItem.textContent = data.user + "-"+data.time+': ' + data.message;
         messageList.appendChild(chatItem);
         window.scrollTo(0, document.body.scrollHeight);
     });

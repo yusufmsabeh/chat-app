@@ -15,7 +15,7 @@ io.on('connection', (socket) => {
         console.log('User is disconnected - Username: ' + socket.username);
     });
     socket.on('new message', (msg) => {
-        io.emit('send message', {message: msg, user: socket.username});
+        io.emit('send message', {message: msg, user: socket.username,time:new Date()});
     });
     socket.on('new user', (usr) => {
         socket.username = usr;
