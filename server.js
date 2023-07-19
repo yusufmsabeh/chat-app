@@ -19,7 +19,8 @@ io.on('connection', (socket) => {
         io.emit('send message', {message: msg, user: socket.username,time:`${now.getHours()}:${now.getMinutes()}`});
     });
     socket.on('new user', (usr) => {
-        socket.username = usr;
+        const randomNumber = Math.floor(Math.random()*10000);
+        socket.username = usr+`(${randomNumber})`;
         console.log('User is connected - Username: ' + socket.username);
     });
 });
